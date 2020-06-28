@@ -1,0 +1,90 @@
+function charts1()
+{
+    //初始化ehcharts实例
+    var myChart=echarts.init(document.getElementById("box1"));
+    //指定图表的配置项和数据
+    var option={
+        //标题
+        title:{
+            text:'包裹流量'
+        },
+        //工具箱
+        //保存图片
+        toolbox:{
+            show:true,
+            feature:{
+                saveAsImage:{
+                    show:true
+                }
+            }
+        },
+        //图例-每一条数据的名字叫销量
+        legend:{
+            data:['流量','发出','签收']
+        },
+        //x轴
+        xAxis:{
+            data:["06-21","06-22","06-23","06-24","06-25","06-26"]
+        },
+        //y轴没有显式设置，根据值自动生成y轴
+        yAxis:{},
+        //数据-data是最终要显示的数据
+        series:[{
+            name:'流量',
+            type:'line',
+            data:[1100,1300,1405,1200,1350,1070],
+            },
+            {
+            name:'发出',
+            type:'line',
+            data:[550,600,605,500,700,600],
+            },
+            {
+            name:'签收',
+            type:'line',
+            data:[550,700,800,700,600,470],
+        }]
+    };
+    //使用刚刚指定的配置项和数据项显示图表
+    myChart.setOption(option);
+}
+
+function charts2(){
+    //初始化ehcharts实例
+    var myChart=echarts.init(document.getElementById("box2"));
+    //指定图表的配置项和数据
+    var option={
+        //标题
+        title:{
+            text:'活跃用户'
+        },
+        //工具箱
+        //保存图片
+        toolbox:{
+            show:true,
+            feature:{
+                saveAsImage:{
+                    show:true
+                }
+            }
+        },
+        //图例-每一条数据的名字叫销量
+        legend:{
+            data:['用户量']
+        },
+        //x轴
+        xAxis:{
+            data:["06-21","06-22","06-23","06-24","06-25","06-26"]
+        },
+        //y轴没有显式设置，根据值自动生成y轴
+        yAxis:{},
+        //数据-data是最终要显示的数据
+        series:[{
+            name:'用户量',
+            type:'line',
+            data:[250,300,405,270,350,270],
+        }]
+    };
+    //使用刚刚指定的配置项和数据项显示图表
+    myChart.setOption(option);
+}
